@@ -1,9 +1,10 @@
 import time
 
 from pyspark.sql import SparkSession
+from spark_pro.init.session import create_spark_session
 
 # Initialize Spark session
-spark = SparkSession.builder.appName("RDD_CRUD").master("local[*]").getOrCreate()
+spark = create_spark_session("RDD_CRUD")
 
 ############################# RDD[String] (CRUD Operations) ####################################
 

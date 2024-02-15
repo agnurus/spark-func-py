@@ -1,6 +1,7 @@
 import sys
 import time
 from pyspark.sql import SparkSession
+from spark_pro.init.session import create_spark_session
 
 #Resilient Distributed Datasets (RDDs) in Apache Spark are immutable distributed collections of objects. While RDDs are immutable,
 #you can perform operations that simulate CRUD operations by transforming the RDDs using various Spark transformations and actions
@@ -8,7 +9,7 @@ from pyspark.sql import SparkSession
 #Delete (D) Operation: Similarly, deleting elements would involve creating a new RDD excluding the elements to be deleted.
 
 # Initialize Spark session
-spark = SparkSession.builder.appName("RDD_CRUD").master("local[*]").getOrCreate()
+spark = create_spark_session("RDD_CRUD")
 #spark_pro.sparkContext.setLogLevel("INFO")
 
 ##########################  create ##########################
